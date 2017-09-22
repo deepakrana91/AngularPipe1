@@ -58,7 +58,9 @@
         <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
       </form>
 
-      <!-- Displaying the data in table , also using the date pipe to show the date in desired form -->
+      <!-- Displaying the data in table , also -->
+      <!-- For the Assingment 11.1 i have used the date pipe to show the date in desired form
+           and for the Assingment 11.2 and Assingment 11.3, i have used the uppercase pipe to display the prefix(Mr and Mrs) in capital-->
       <hr>
       <h3>Form Values</h3>
       <div class="table-responsive">
@@ -79,7 +81,7 @@
                 <td>{{item.lname}}</td>
                 <td>{{item.email}}</td>
                 <td>{{item.date| date:'shortDate'}}</td>
-                <td>{{item.designation}}</td>
+                <td>{{item.designation|uppercase}}</td>
               </tr>
             </tbody>
           </table>
