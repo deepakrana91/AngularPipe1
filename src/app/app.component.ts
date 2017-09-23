@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
   desigArray:any[]=[];
   nameArray:any[]=[];
   defaultDesignation="Mr"
+  filterName='';
 
 
 

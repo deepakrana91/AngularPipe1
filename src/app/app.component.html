@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-8">
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="form-group">
           <label for="fname">First Name</label>
@@ -57,10 +57,16 @@
         
         <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
       </form>
+      <br>
+      <hr>
+      <input type="text" [(ngModel)]="filterName" id="search" placeholder="Type to Search" class="form-control">
+      <!-- Displaying the data in table , also 
+           1.For Assingment 11.1, I have used the Date pipe to show the date in desired form.
+           2.For Assingment 11.2 and 11.3, I have used the uppercase pipe to display the prefix(Mr,Mrs) in capital
+           3.Also created a filter pipe to search the data in table using the first name-->
+           
+      
 
-      <!-- Displaying the data in table , also -->
-      <!-- For the Assingment 11.1 i have used the date pipe to show the date in desired form
-           and for the Assingment 11.2 and Assingment 11.3, i have used the uppercase pipe to display the prefix(Mr and Mrs) in capital-->
       <hr>
       <h3>Form Values</h3>
       <div class="table-responsive">
@@ -76,7 +82,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of nameArray">
+              <tr *ngFor="let item of nameArray| filter:filterName">
                 <td>{{item.fname}}</td>
                 <td>{{item.lname}}</td>
                 <td>{{item.email}}</td>
