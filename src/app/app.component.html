@@ -63,7 +63,8 @@
       <!-- Displaying the data in table , also 
            1.For Assingment 11.1, I have used the Date pipe to show the date in desired form.
            2.For Assingment 11.2 and 11.3, I have used the uppercase pipe to display the prefix(Mr,Mrs) in capital
-           3.Also created a filter pipe to search the data in table using the first name-->
+           3.Also created a filter pipe to search the data in table using the first name
+           4.Created a capitalize pipe to capitalize the first letter of Fname and Lname-->
            
       
 
@@ -83,8 +84,8 @@
             </thead>
             <tbody>
               <tr *ngFor="let item of nameArray| filter:filterName">
-                <td>{{item.fname}}</td>
-                <td>{{item.lname}}</td>
+                <td>{{item.fname | capitalize}}</td>
+                <td>{{item.lname | capitalize}}</td>
                 <td>{{item.email}}</td>
                 <td>{{item.date| date:'shortDate'}}</td>
                 <td>{{item.designation|uppercase}}</td>
